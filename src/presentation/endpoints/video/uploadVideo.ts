@@ -11,7 +11,7 @@ export const uploadVideoEndpoint = async (req: Request, res: Response) => {
         )
 
         const result = await uc.execute({
-            token: req.headers.auth as string,
+            token: req.headers.Authorization as string,
             url: req.body.url,
             title: req.body.title,
             description: req.body.description

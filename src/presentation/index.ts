@@ -10,6 +10,7 @@ import { DeleteVideoEndpoint } from "./endpoints/video/deleteVideo";
 import { GetAllVideosEndpoint } from "./endpoints/video/getAllVideos";
 import { GetVideoInfoByIdEndpoint } from "./endpoints/video/getVideoInfoById";
 
+
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -25,7 +26,6 @@ app.get("/videos", GetVideoByUserIdEndpoint)
 app.get("/videos/get", GetAllVideosEndpoint)
 app.get("/videos/:videoId", GetVideoInfoByIdEndpoint)
 
-app.delete("/videos/delete/:videoId", DeleteVideoEndpoint)
-
+app.delete("/videos/delete/:videoId", DeleteVideoEndpoint)  
 
 export default app;

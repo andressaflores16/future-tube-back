@@ -10,10 +10,11 @@ export class GetVideoByUserIdUC {
 
     public async execute(input: GetVideoByUserIdUCInput): Promise<Video[]> {
         let id
+
         if (input.userId) {
             id = input.userId
 
-        } else if (!input.userId && input.token) {
+        } else if (input.token) {
             const usersInfo = this.authenticationGateway.getUserInfoFromToken(
                 input.token)
 

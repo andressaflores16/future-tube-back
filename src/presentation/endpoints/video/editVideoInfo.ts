@@ -11,7 +11,7 @@ export const EditVideoInfoEndpoint = async (req: Request, res: Response) => {
         )
 
         const result = await uc.execute({
-            token: req.headers.auth as string,
+            token: req.headers.Authorization as string,
             videoId: req.params.videoId,
             title: req.body.title,
             description: req.body.description
